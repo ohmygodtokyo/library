@@ -1,0 +1,5 @@
+<%= simple_form_for(@collection) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :image, as: :file %>
+  <%= f.submit "Create Collection", class: "btn btn-dark" %>
+<% end %>

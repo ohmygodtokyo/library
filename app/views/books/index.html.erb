@@ -1,0 +1,14 @@
+<!-- div>
+  <% @books.each do |book| %>
+    <div class="card" style="width: 18rem;">
+      <%= image_tag book.file.preview(resize_to_fit: [500, 500]) %>
+      <div class="card-body">
+        <h5 class="card-title"><strong><%= book.title %></strong></h5>
+        <p class="card-text"><%= book.description %></p>
+        <%= link_to 'Download', download_collection_book_path(@collection, book) %>
+        <%= link_to 'Read', read_collection_book_path(@collection, book) %>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  <% end %>
+</div -->

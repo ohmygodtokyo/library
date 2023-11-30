@@ -1,0 +1,8 @@
+<% @collections.each do |collection| %>
+  <%= link_to collection_path(collection) do %>
+    <% if collection.image.attached? %>
+      <%= image_tag(collection.image, style:"width: 100%; height: 290px; object-fit: cover;") %>
+    <% end %>
+  <% end %>
+  <%= link_to "#{collection.name}", collection_path(collection),  class: "text-decoration-none" %>
+<% end %>
