@@ -1,0 +1,80 @@
+const languages = [
+  {
+    no: "0",
+    name: "Auto",
+    native: "Detect",
+    code: "auto",
+  },
+  {
+    no: "1",
+    name: "Afrikaans",
+    native: "Afrikaans",
+    code: "af",
+  },
+  {
+    no: "2",
+    name: "Amharic",
+    native: "አማርኛ",
+    code: "am",
+  },
+  {
+    no: "3",
+    name: "Bambare",
+    native: "Bamanankan",
+    code: "bm",
+  },
+  {
+    no: "4",
+    name: "Hausa",
+    native: "Hausa",
+    code: "ha",
+  },
+  {
+    no: "5",
+    name: "Igbo",
+    native: "Igbo",
+    code: "ig",
+  },
+  {
+    no: "6",
+    name: "Kinyarwanda",
+    native: "Kinyarwanda",
+    code: "rw",
+  },
+  {
+    no: "7",
+    name: "Malagasy",
+    native: "Malagasy",
+    code: "mg",
+  },
+  {
+    no: "8",
+    name: "Somali",
+    native: "Soomaali",
+    code: "so",
+  },
+  {
+    no: "9",
+    name: "Swahili",
+    native: "Kiswahili",
+    code: "sw",
+  },
+  {
+    no: "10",
+    name: "Xhosa",
+    native: "isiXhosa",
+    code: "xh",
+  },
+  {
+    no: "11",
+    name: "Yoruba",
+    native: "Yorùbá",
+    code: "yo",
+  },
+  {
+    no: "12",
+    name: "Zulu",
+    native: "isiZulu",
+    code: "zu",
+  },
+];
