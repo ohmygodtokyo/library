@@ -1,9 +1,41 @@
 <div class="container">
 <%= simple_form_for [@collection, @book], html: { multipart: true } do |f| %>
-  <%= f.input :title %>
+  <%= f.input :title, class: "label" %>
   <%= f.input :description %>
   <%= f.input :author %>
   <%= f.input :file, as: :file %>
-  <%= f.submit "Create Book", class: "btn btn-dark" %>
+  <%= f.submit "Create Book", class: "btn orange-button" %>
 <% end %>
 </div>
+
+<style>
+
+.orange-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: orange;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: 'Poppins';
+  font-weight: bold;
+  margin-top: 30px;
+  border: none;
+
+}
+
+.orange-button:hover {
+  background-color: darkorange;
+  color: #323232;
+}
+
+.container label {
+    font-weight: bold;
+    color: white;
+
+  }
+
+  .container input {
+    background-color: rgba(230, 230, 230, 0.1);
+  }
+</style>

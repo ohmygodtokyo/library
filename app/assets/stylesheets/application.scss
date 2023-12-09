@@ -20,4 +20,20 @@ h1, p {
   font-weight: bold;
 }
 
+body {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(230, 230, 230, 0.1) transparent;
+}
 
+/* For WebKit (Chrome, Safari, etc.) */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(230, 230, 230, 0.1);
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}

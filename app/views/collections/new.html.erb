@@ -2,7 +2,7 @@
 <%= simple_form_for(@collection) do |f| %>
   <%= f.input :name %>
   <%= f.input :image, as: :file %>
-  <%= f.submit "Create Collection", class: "orange-button" %>
+  <%= f.submit "Create Collection", id: "orange-button" %>
 <% end %>
 </div>
 
@@ -10,9 +10,12 @@
   .container label {
     font-weight: bold;
     color: white;
-
   }
-.orange-button {
+
+  .container input {
+    background-color: rgba(230, 230, 230, 0.1);
+  }
+#orange-button {
   display: inline-block;
   padding: 10px 20px;
   background-color: orange;

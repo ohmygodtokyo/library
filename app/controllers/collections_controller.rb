@@ -1,5 +1,6 @@
 class CollectionsController < ApplicationController
   before_action :set_collection, only: [:show, :edit, :update, :destroy]
+  helper_method :collection_image_url
 
   def index
     @collections = Collection.all
