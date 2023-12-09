@@ -1,2 +1,45 @@
-<%= link_to "Add a new book", new_collection_book_path(@collection, @book) %>
-<%= render 'shared/book' %>
+<div class="container">
+  <%= render 'shared/book' %>
+  <%= link_to "Add a new book", new_collection_book_path(@collection, @book), class: "orange-button" %>
+<%= link_to "View Collections", collections_path, class: "trans-button"  %>
+</div>
+
+<style>
+
+.orange-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: orange;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: 'Poppins';
+  font-weight: bold;
+  margin-top: 30px;
+  border: none;
+
+}
+
+.orange-button:hover {
+  background-color: darkorange;
+}
+
+.trans-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(230, 230, 230, 0.1);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: 'Poppins';
+  font-weight: bold;
+  margin-top: 30px;
+
+}
+
+.trans-button: hover {
+  box-shadow: 0 0 15px rgba(246, 241, 241, 0.43);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+}
+</style>

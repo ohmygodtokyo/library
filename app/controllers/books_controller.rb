@@ -16,7 +16,7 @@ class BooksController < ApplicationController
 
   def create
     @book = @collection.books.new(book_params)
-    @book.user = current_user
+    @book.user_id = current_user.id
 
     puts "Params: #{params.inspect}"
     puts "Book valid? #{@book.valid?}"

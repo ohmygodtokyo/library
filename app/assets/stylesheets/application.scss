@@ -10,3 +10,14 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+h1, p {
+  font-family: 'Poppins';
+}
+
+.nav-name {
+  font-family: 'Poppins';
+  font-weight: bold;
+}
+
+

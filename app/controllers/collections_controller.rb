@@ -35,7 +35,7 @@ class CollectionsController < ApplicationController
 
   def destroy
     @collection.destroy
-    redirect_to collections_path(@collections), status: :see_other, notice: "Collection was successfully deleted."
+    redirect_to collections_path, status: :see_other, notice: "Collection was successfully deleted."
   end
 
   private
