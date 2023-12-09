@@ -12,6 +12,7 @@
 @import "pages/index";
 @import "show";
 
+// Overall Styling//
 h1, p {
   font-family: 'Poppins';
 }
@@ -57,6 +58,7 @@ body::-webkit-scrollbar-track {
   background-color: darkorange;
 }
 
+// Overal Styling //
 .trans-button {
   display: inline-block;
   padding: 10px 20px;
@@ -67,13 +69,14 @@ body::-webkit-scrollbar-track {
   font-family: 'Poppins';
   font-weight: bold;
   margin-top: 30px;
-
 }
 
 .trans-button:hover {
   background-color: rgba(246, 241, 241, 0.43);
 }
+// Overall Styling //
 
+// Forms //
 .container label {
   font-weight: bold;
   color: white;
@@ -82,6 +85,7 @@ body::-webkit-scrollbar-track {
 .container input {
   background-color: rgba(230, 230, 230, 0.1);
 }
+
 #orange-button {
 display: inline-block;
 padding: 10px 20px;
@@ -92,12 +96,14 @@ border-radius: 5px;
 font-family: 'Poppins';
 font-weight: bold;
 margin-top: 30px;
-
 }
 
 .orange-button:hover {
 background-color: darkorange;
 }
+// Forms //
+
+//Book Cards Styling//
 
 .card-title {
   font-family: 'Poppins';
@@ -115,8 +121,18 @@ background-color: darkorange;
 
 }
 .card {
- display: inline-block;
-  margin-right: 10px;
+  display: inline-block;
+  margin-right: 45px;
   vertical-align: top;
+  margin-bottom: 20px;
+}
 
-  }
+.book-img {
+  position: absolute;
+  top: -3;
+  left: -5;
+  width: 30%;
+  height: 100%;
+}
+
+//Book Cards Styling//

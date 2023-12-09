@@ -7,13 +7,15 @@
           <% if book.file.previewable? %>
             <%= image_tag book.file.preview(resize_to_fit: [500, 500], class: "img-fluid") %>
           <% else %>
-            <%= image_tag('default-book-image.png', class: "img-fluid", style: "object-fit: cover;") %>
+            <%= image_tag('default-book-image.png', class: "img-fluid book-img", style: "object-fit: cover;") %>
           <% end %>
         </div>
         <div class="col-md-8">
           <div class="card-body">
             <h5 class="card-title"><strong><%= book.title %></strong></h5>
+            <p class="card-text"><strong><%= truncate_description(book.author) %></strong></p>
             <p class="card-text"><%= truncate_description(book.description) %></p>
+
             <%= link_to download_collection_book_path(@collection, book), class: "btn" do %>
               <i class="fas fa-download"></i>
             <% end %>
@@ -29,15 +31,3 @@
     </div>
   <% end %>
 </div>
-
-
-
-
-<style>
-
-
-
-
-
-
-</style>
