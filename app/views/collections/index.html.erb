@@ -6,7 +6,6 @@
         <%= button_to collection_path(collection), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-button" do %>
           <span>&times;</span>
         <% end %>
-
         <% if collection.image.attached? %>
           <%= image_tag(collection.image, class: "collection-image") %>
         <% end %>
@@ -16,8 +15,6 @@
         </div>
       </div>
     <% end %>
-
-
     <!-- Empty container block for adding a collection -->
     <div class="collection-block empty-block">
       <%= link_to new_collection_path, class: "text-decoration-none" do %>
@@ -28,4 +25,3 @@
     </div>
   </div>
 </div>
-

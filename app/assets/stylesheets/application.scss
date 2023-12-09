@@ -10,6 +10,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "show";
 
 h1, p {
   font-family: 'Poppins';
@@ -25,7 +26,7 @@ body {
   scrollbar-color: rgba(230, 230, 230, 0.1) transparent;
 }
 
-/* For WebKit (Chrome, Safari, etc.) */
+
 body::-webkit-scrollbar {
   width: 12px;
 }
@@ -37,3 +38,85 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-track {
   background-color: transparent;
 }
+
+.orange-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: orange;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: 'Poppins';
+  font-weight: bold;
+  margin-top: 30px;
+  border: none;
+
+}
+
+.orange-button:hover {
+  background-color: darkorange;
+}
+
+.trans-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(230, 230, 230, 0.1);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: 'Poppins';
+  font-weight: bold;
+  margin-top: 30px;
+
+}
+
+.trans-button:hover {
+  background-color: rgba(246, 241, 241, 0.43);
+}
+
+.container label {
+  font-weight: bold;
+  color: white;
+}
+
+.container input {
+  background-color: rgba(230, 230, 230, 0.1);
+}
+#orange-button {
+display: inline-block;
+padding: 10px 20px;
+background-color: orange;
+color: white;
+text-decoration: none;
+border-radius: 5px;
+font-family: 'Poppins';
+font-weight: bold;
+margin-top: 30px;
+
+}
+
+.orange-button:hover {
+background-color: darkorange;
+}
+
+.card-title {
+  font-family: 'Poppins';
+}
+
+.btn {
+  color: grey;
+}
+
+.card-text {
+  font-family: 'Poppins';
+  color: rgba(0, 0, 0, 0.53);
+  font-size: 12px;
+
+
+}
+.card {
+ display: inline-block;
+  margin-right: 10px;
+  vertical-align: top;
+
+  }
