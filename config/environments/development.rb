@@ -17,7 +17,7 @@ Rails.application.configure do
 
   # Enable server timing
   config.server_timing = true
-
+  config.serve_static_files = true
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join("tmp/caching-dev.txt").exist?
@@ -68,4 +68,10 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  Rails.application.configure do
+    # ... other configurations ...
+
+    config.active_storage.service = :local
+  end
 end

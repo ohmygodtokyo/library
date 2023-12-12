@@ -1,5 +1,6 @@
 class CollectionsController < ApplicationController
   before_action :set_collection, only: [:show, :edit, :update, :destroy]
+  helper_method :collection_image_url
 
   def index
     @collections = Collection.all
@@ -35,7 +36,7 @@ class CollectionsController < ApplicationController
 
   def destroy
     @collection.destroy
-    redirect_to collections_path(@collections), status: :see_other, notice: "Collection was successfully deleted."
+    redirect_to collections_path, status: :see_other, notice: "Collection was successfully deleted."
   end
 
   private

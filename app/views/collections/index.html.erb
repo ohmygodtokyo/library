@@ -1,8 +1,27 @@
-<% @collections.each do |collection| %>
-  <%= link_to collection_path(collection) do %>
-    <% if collection.image.attached? %>
-      <%= image_tag(collection.image, style:"width: 100%; height: 290px; object-fit: cover;") %>
+<div class="container">
+  <h1 class="h1">Collections</h1>
+  <div class="collection-container">
+    <% @collections.each do |collection| %>
+      <div class="collection-block">
+        <%= button_to collection_path(collection), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-button" do %>
+          <span>&times;</span>
+        <% end %>
+        <% if collection.image.attached? %>
+          <%= image_tag(collection.image, class: "collection-image") %>
+        <% end %>
+
+        <div class="collection-name-wrapper">
+          <%= link_to "#{collection.name}", collection_path(collection), class: "text-decoration-none collection-name" %>
+        </div>
+      </div>
     <% end %>
-  <% end %>
-  <%= link_to "#{collection.name}", collection_path(collection),  class: "text-decoration-none" %>
-<% end %>
+    <!-- Empty container block for adding a collection -->
+    <div class="collection-block empty-block">
+      <%= link_to new_collection_path, class: "text-decoration-none" do %>
+        <div class="empty-container">
+          <span id="plus-sign">+</span>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

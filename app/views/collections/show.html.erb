@@ -1,2 +1,11 @@
-<%= link_to "Add a new book", new_collection_book_path(@collection, @book) %>
-<%= render 'shared/book' %>
+<div class="card-category">
+  <%= link_to collection_path(@collection) do %>
+    <%= image_tag @collection.image, class: "img-fluid card-image", alt: @collection.name %>
+    <span class="text-overlay"><%= @collection.name %></span>
+  <% end %>
+</div>
+<div class="container">
+  <%= render 'shared/book' %>
+  <%= link_to "Add A Book", new_collection_book_path(@collection, @book), class: "orange-button" %>
+<%= link_to "View Collections", collections_path, class: "trans-button"  %>
+</div>

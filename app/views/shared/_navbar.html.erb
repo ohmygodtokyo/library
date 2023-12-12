@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<!--<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
@@ -36,4 +36,41 @@
       </ul>
     </div>
   </div>
-</div>
+</div>-->
+
+
+<nav class="navbar navbar-dark bg-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand green-txt nav-name" href="#">Library</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Library</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "Home", collections_path, class: "nav-link" %>
+          <li class="nav-item">
+          <%= link_to "New Collection", new_collection_path, class: "nav-link active" %>
+              <%= link_to "View Collections", collections_path, class: "nav-link active" %>
+              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link active" %>
+          </li>
+           <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
