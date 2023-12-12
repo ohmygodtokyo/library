@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_collection
-  before_action :set_book, only: [:edit, :show, :update, :destroy, :download, :read]
+  before_action :set_book, only: [:edit, :show, :update, :destroy, :download, :read, :translate]
 
   def index
     @books = @collection.books
@@ -53,6 +53,9 @@ class BooksController < ApplicationController
   def read
     @book = @collection.books.find(params[:id])
     send_data @book.file.download, type: @book.file.content_type, disposition: 'inline'
+  end
+
+  def translate
   end
 
   private

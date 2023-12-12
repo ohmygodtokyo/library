@@ -87,3 +87,7 @@ gem "prawn", "~> 2.4"
 gem "poppler", "~> 4.2"
 
 gem "ruby-vips", "~> 2.2"
+
+gem "google-cloud-translate-v2", "~> 0.4.1"
+
+gem "cloudinary", "~> 1.28"
