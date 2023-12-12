@@ -1,0 +1,24 @@
+.container label {
+  font-weight: bold;
+  color: white;
+}
+
+.container input {
+  background-color: rgba(230, 230, 230, 0.1);
+}
+
+#orange-button {
+display: inline-block;
+padding: 10px 20px;
+background-color: orange;
+color: white;
+text-decoration: none;
+border-radius: 5px;
+
+font-weight: bold;
+margin-top: 30px;
+}
+
+.orange-button:hover {
+background-color: darkorange;
+}
