@@ -17,10 +17,13 @@
             <p class="card-text"><%= truncate(book.description, length: 100) %></p>
 
             <%= link_to download_collection_book_path(@collection, book), class: "btn" do %>
-              <i class="fas fa-download"></i>
+              <i class="fa-solid fa-file-arrow-down"></i>
             <% end %>
             <%= link_to read_collection_book_path(@collection, book), target: "_blank", class: "btn" do %>
-              <i class="fas fa-book-open"></i>
+              <i class="fa-solid fa-book-open"></i>
+            <% end %>
+            <%= link_to translate_path, class: "text-decoration-none", target: "_blank", class: "btn" do %>
+              <i class="fa-solid fa-language"></i>
             <% end %>
             <%= link_to collection_book_path(@collection, book), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn" do %>
               <i class="fas fa-trash-alt"></i>
