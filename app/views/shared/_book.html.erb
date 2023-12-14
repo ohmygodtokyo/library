@@ -3,9 +3,9 @@
   <% @collection.books.each do |book| %>
     <div class="card mb-3" style="max-width: 540px;">
       <div class="row g-0">
-        <div class="col-md-4">
+        <div class="col-md-4" style="width: 25%; height: 100%;">
           <% if book.file.previewable? %>
-            <%= image_tag book.file.preview(resize_to_fit: [500, 500], class: "img-fluid") %>
+            <%= image_tag book.file.preview(resize_to_fit: [500, 500]), class: "img-fluid", style: "" %>
           <% else %>
             <%= image_tag('default-book-image.png', class: "img-fluid book-img", style: "object-fit: cover;") %>
           <% end %>
@@ -13,31 +13,22 @@
         <div class="col-md-8">
           <div class="card-body">
             <h5 class="card-title"><strong><%= book.title %></strong></h5>
-            <p class="card-text"><strong><%= truncate_description(book.author) %></strong></p>
-            <p class="card-text"><%= truncate_description(book.description) %></p>
+            <p class="card-text"><strong><%= book.author %></strong></p>
+            <p class="card-text"><%= truncate(book.description, length: 100) %></p>
 
             <%= link_to download_collection_book_path(@collection, book), class: "btn" do %>
               <i class="fas fa-download"></i>
             <% end %>
-            <%= link_to read_collection_book_path(@collection, book), class: "btn" do %>
+            <%= link_to read_collection_book_path(@collection, book), target: "_blank", class: "btn" do %>
               <i class="fas fa-book-open"></i>
             <% end %>
-            <%= link_to collection_path(@collection), method: :delete, data: { confirm: "Are you sure?" }, class: "btn" do %>
+            <%= link_to collection_book_path(@collection, book), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn" do %>
               <i class="fas fa-trash-alt"></i>
+            <% end %>
+            <%= link_to do %>
             <% end %>
           </div>
         </div>
-    <div class="card" style="width: 18rem;">
-      <% if book.file.previewable? %>
-        <%= image_tag book.file.preview(resize_to_fit: [500, 500]) %>
-      <% else %>
-        <%= image_tag('default-book-image.png', style:"width: 100%; height: 360.43px; object-fit: cover;") %>
-      <% end %>
-      <div class="card-body">
-        <h5 class="card-title"><strong><%= book.title %></strong></h5>
-        <p class="card-text"><%= truncate_description(book.description) %></p>
-        <%= link_to 'Download', download_collection_book_path(@collection, book) %>
-        <%= link_to 'Read', read_collection_book_path(@collection, book) %>
       </div>
     </div>
   <% end %>

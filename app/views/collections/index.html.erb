@@ -3,7 +3,7 @@
   <div class="collection-container">
     <% @collections.each do |collection| %>
       <div class="collection-block">
-        <%= button_to collection_path(collection), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-button" do %>
+        <%= link_to collection_path(collection), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "delete-button" do %>
           <span>&times;</span>
         <% end %>
         <% if collection.image.attached? %>
