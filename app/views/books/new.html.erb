@@ -1,9 +1,8 @@
 <div class="container">
-<%= simple_form_for [@collection, @book], html: { multipart: true } do |f| %>
-  <%= f.input :title, class: "label" %>
-  <%= f.input :description %>
-  <%= f.input :author %>
-  <%= f.input :file, as: :file %>
-  <%= f.submit "Create Book", id: "orange-button" %>
-<% end %>
+  <%= simple_form_for [@collection, @book], html: { multipart: true } do |f| %>
+    <%= f.input :title, class: "label" %>
+    <%= f.input :author %>
+    <%= f.input :file, as: :file %>
+    <%= f.submit "Create Book", id: "orange-button" %>
+  <% end %>
 </div>

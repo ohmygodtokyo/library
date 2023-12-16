@@ -1,4 +1,14 @@
-<div class="container">
+<div class="mode">
+  <label class="toggle" for="dark-mode-btn">
+    <div class="toggle-track">
+      <input type="checkbox" class="toggle-checkbox" id="dark-mode-btn" />
+      <span class="toggle-thumb"></span>
+      <%= image_tag "sun.png", alt: "Sun" %>
+      <%= image_tag "moon.png", alt: "Moon" %>
+    </div>
+  </label>
+</div>
+<div class="container-l">
   <div class="card input-wrapper">
     <div class="from">
       <span class="heading">From :</span>

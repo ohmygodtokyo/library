@@ -1,6 +1,6 @@
 <div class="card-category">
   <%= link_to collection_path(@collection) do %>
-    <%= image_tag @collection.image, class: "img-fluid card-image", alt: @collection.name %>
+    <%= image_tag @collection.photo, class: "img-fluid card-image", alt: @collection.name %>
     <span class="text-overlay"><%= @collection.name %></span>
   <% end %>
 </div>

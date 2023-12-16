@@ -10,7 +10,6 @@ Rails.application.routes.draw do
       member do
         get 'download', to: 'books#download'
         get 'read', to: 'books#read'
-        get 'translate', to: 'books#translate'
       end
     end
   end

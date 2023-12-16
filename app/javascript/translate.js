@@ -136,8 +136,17 @@ downloadBtn.addEventListener("click", (e) => {
 
 const darkModeCheckbox = document.getElementById("dark-mode-btn");
 
+// Load the saved dark mode setting
+if (localStorage.getItem('darkMode') === 'true') {
+  document.body.classList.add("dark");
+  darkModeCheckbox.checked = true;
+}
+
 darkModeCheckbox.addEventListener("change", () => {
   document.body.classList.toggle("dark");
+
+  // Save the dark mode setting
+  localStorage.setItem('darkMode', darkModeCheckbox.checked);
 });
 
 const inputChars = document.querySelector("#input-chars");
