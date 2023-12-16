@@ -25,6 +25,6 @@ collection = user.collections.create!(
 )
 
 puts "Attaching default image to collection..."
-collection.image.attach(io: File.open("app/assets/images/Literary-Fiction-Books-dark-min-1536x864.png"), filename: "Literary-Fiction-Books-dark-min-1536x864.png", content_type: "image/png")
+# collection.image.attach(io: File.open("app/assets/images/Literary-Fiction-Books-dark-min-1536x864.png"), filename: "Literary-Fiction-Books-dark-min-1536x864.png", content_type: "image/png")
 
 puts "Database seeding has now completed!"

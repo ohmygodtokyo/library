@@ -6,9 +6,9 @@
         <%= button_to collection_path(collection), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-button" do %>
           <span>&times;</span>
         <% end %>
-        <% if collection.image.attached? %>
-          <%= image_tag(collection.image, class: "collection-image") %>
-        <% end %>
+<!--        # <%# if collection.image.attached? %>
+        # <%#= image_tag(collection.image, class: "collection-image") %>
+        # <%# end %>-->
 
         <div class="collection-name-wrapper">
           <%= link_to "#{collection.name}", collection_path(collection), class: "text-decoration-none collection-name" %>
