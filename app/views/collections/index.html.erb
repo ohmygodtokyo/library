@@ -8,8 +8,7 @@
         <% end %>
 
         <% if collection.photo.attached? %>
-          <%= collection.photo.key %>
-          <%= cl_image_tag(collection.photo.key, width: 100, height: 100) %>
+          <%= image_tag(collection.photo, width: 100, height: 100, class: "collection-image") %>
         <% else %>
           <%= image_tag('Literary-Fiction-Books-dark-min-1536x864.png', class: "collection-image", style:"width: 100%; height: 196.76px; object-fit: cover;") %>
         <% end %>
@@ -18,7 +17,6 @@
           <%= link_to "#{collection.name}", collection_path(collection), class: "text-decoration-none collection-name" %>
         </div>
       </div>
-      <%# collection.image.key %>
     <% end %>
     <!-- Empty container block for adding a collection -->
     <div class="collection-block empty-block">

@@ -26,11 +26,11 @@
   </head>
 
   <body>
-      <% if user_signed_in? %>
-        <% unless current_page?(controller: 'translations', action: 'translate') %>
-          <%= render "shared/navbar" %>
-        <% end %>
+    <% if user_signed_in? %>
+      <% unless current_page?(controller: 'translations', action: 'translate') %>
+        <%= render "shared/navbar" %>
       <% end %>
+    <% end %>
 
     <%= render "shared/flashes" %>
 

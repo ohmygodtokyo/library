@@ -7,9 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning up database..."
-# Book.destroy_all
-# Collection.destroy_all
-# User.destroy_all
+Book.destroy_all
+Collection.destroy_all
+User.destroy_all
 
 puts "Creating default user..."
 user = User.create!(
@@ -25,6 +25,6 @@ collection = user.collections.create!(
 )
 
 puts "Attaching default image to collection..."
-collection.image.attach(io: File.open("app/assets/images/Literary-Fiction-Books-dark-min-1536x864.png"), filename: "Literary-Fiction-Books-dark-min-1536x864.png", content_type: "image/png")
+collection.photo.attach(io: File.open("app/assets/images/Literary-Fiction-Books-dark-min-1536x864.png"), filename: "Literary-Fiction-Books-dark-min-1536x864.png", content_type: "image/png")
 
 puts "Database seeding has now completed!"

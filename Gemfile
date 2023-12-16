@@ -90,4 +90,4 @@ gem "ruby-vips", "~> 2.2"
 
 gem "google-cloud-translate-v2", "~> 0.4.1"
 
-gem "cloudinary", "~> 1.28"
+gem "cloudinary"
