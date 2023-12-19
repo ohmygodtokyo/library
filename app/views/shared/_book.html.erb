@@ -18,8 +18,8 @@
       <% end %>
 
       <div class="card-body card-content">
-        <h5 class="card-title"><small><%= book.title %></small></h5>
-        <p class="card-text"><strong><i><%= book.author %></i></strong></p>
+        <h5 class="card-title"><strong><%= book.title %></strong></h5>
+        <p class="card-text"><small><i><%= book.author %></i></small></p>
         <div class="icon-container">
           <%= link_to download_collection_book_path(@collection, book), class: "icon-link" do %>
             <i class="fa-solid fa-file-arrow-down"></i>
@@ -30,7 +30,7 @@
           <%= link_to translate_path, class: "text-decoration-none", target: "_blank", class: "icon-link" do %>
             <i class="fa-solid fa-language"></i>
           <% end %>
-          <%= link_to collection_notes_path(@collection, book), class: "text-decoration-none", target: "_blank", class: "icon-link" do %>
+          <%= link_to index_path(@collection, book), class: "text-decoration-none", target: "_blank", class: "icon-link" do %>
             <i class="fa-solid fa-note-sticky"></i>
           <% end %>
           <%= link_to collection_book_path(@collection, book), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "icon-link" do %>

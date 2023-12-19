@@ -10,10 +10,11 @@ Rails.application.routes.draw do
       member do
         get 'download', to: 'books#download'
         get 'read', to: 'books#read'
-        resources :notes, only: [:index]
+        # resources :notes, only: [:index]
       end
     end
   end
 
   get 'translate', to: 'translations#translate'
+  get 'index', to: 'notes#index'
 end
