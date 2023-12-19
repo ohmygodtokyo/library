@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_16_095138) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_19_001902) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,6 +61,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_16_095138) do
     t.index ["user_id"], name: "index_collections_on_user_id"
   end
 
+  create_table "notes", force: :cascade do |t|
+    t.string "heading"
+    t.text "body"
+    t.bigint "book_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_notes_on_book_id"
+  end
+
   create_table "translators", force: :cascade do |t|
     t.text "translated_text"
     t.string "original_language"
@@ -90,5 +99,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_16_095138) do
   add_foreign_key "books", "collections"
   add_foreign_key "books", "users"
   add_foreign_key "collections", "users"
+  add_foreign_key "notes", "books"
   add_foreign_key "translators", "books"
 end

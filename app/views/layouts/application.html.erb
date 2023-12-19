@@ -12,9 +12,12 @@
       <% else %>
         <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
       <% end %>
-      <% else %>
-        <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <% else %>
+      <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <% end %>
+
+
+      <%= stylesheet_link_tag "note", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
     <style>
@@ -37,5 +40,6 @@
     <%= yield %>
     <%= javascript_include_tag "languages" %>
     <%= javascript_include_tag "translate" %>
+    <%= javascript_include_tag "notes" %>
   </body>
 </html>

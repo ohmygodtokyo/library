@@ -2,11 +2,21 @@
 <div class="card-container">
   <% @collection.books.each do |book| %>
     <div class="card" style="width: 18rem;">
-      <% if book.file.previewable? %>
-        <%= image_tag book.file.preview(resize_to_fit: [500, 500]), class: "card-img-top", alt: "PDF image cap", style:"height: 20rem; object-fit: fill;" %>
+
+      <% if book.file.attached? %>
+        <% begin %>
+          <%= cl_image_tag("#{book.file.key}", width: 286, height: 320, page: 1, crop: :scale, format: :png, alt: "Thumbnail for the PDF version of #{book.title}") %>
+        <% rescue %>
+          <% if book.file.previewable? %>
+            <%= image_tag book.file.preview(resize_to_fit: [500, 500]), class: "card-img-top", alt: "PDF image cap", style:"height: 20rem; object-fit: fill;" %>
+          <% else %>
+            <%= image_tag('default-book-image.png', class: "card-img-top", alt: "PDF image cap", style:"height: 20rem; object-fit: cover;") %>
+          <% end %>
+        <% end %>
       <% else %>
-        <%= image_tag('default-book-image.png', class: "card-img-top", alt: "PDF image cap", style:"height: 20rem; object-fit: fill;") %>
+        <%= image_tag('default-book-image.png', class: "card-img-top", alt: "PDF image cap", style:"height: 20rem; object-fit: cover;") %>
       <% end %>
+
       <div class="card-body card-content">
         <h5 class="card-title"><small><%= book.title %></small></h5>
         <p class="card-text"><strong><i><%= book.author %></i></strong></p>
@@ -19,6 +29,9 @@
           <% end %>
           <%= link_to translate_path, class: "text-decoration-none", target: "_blank", class: "icon-link" do %>
             <i class="fa-solid fa-language"></i>
+          <% end %>
+          <%= link_to collection_notes_path(@collection, book), class: "text-decoration-none", target: "_blank", class: "icon-link" do %>
+            <i class="fa-solid fa-note-sticky"></i>
           <% end %>
           <%= link_to collection_book_path(@collection, book), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "icon-link" do %>
             <i class="fas fa-trash-alt"></i>
